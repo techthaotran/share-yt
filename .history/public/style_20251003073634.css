@@ -1,0 +1,36 @@
+body {
+  background-color: #111;
+  margin: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .slider {
+  position: absolute;
+  width: 180px;
+  top: 20%;
+  left: calc(50%-180px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+    calc ((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+  )
+  translateZ(500px)
+  ;
+  
+}
+
+.banner .slider .item img {
+  width: 100%;
+  object-fit: cover;
+}

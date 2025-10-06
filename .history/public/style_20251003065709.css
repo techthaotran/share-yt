@@ -1,0 +1,153 @@
+body {
+  background-color: #111;
+  margin: 0;
+}
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .slider {
+  position: absolute;
+  width: 180px;
+  top: 20%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: runLoop 60s linear infinite;
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(500px);
+}
+
+.banner .slider .item img {
+  width: 100%;
+  object-fit: cover;
+  /* border: 1px #372a79 solid; */
+  border-radius: 20px;
+}
+
+@keyframes runLoop {
+  from {
+    transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-10deg) rotateY(360deg);
+  }
+}
+
+.card {
+  position: relative;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent 80%, red);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 20px;
+  animation: 3s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(2rem);
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.banner .main-content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 25px;
+  text-align: center;
+  z-index: -1;
+  color: #fff;
+  font-family: "Montserrat";
+}
+
+.banner .main-content h1 {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1rem;
+  position: relative;
+  left: -100px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  
+}
+.banner .main-content h1::after {
+ position: absolute;
+ left:0;
+ top: 0;
+ content:attr(data-text);
+ z-index: 2;
+ -webkit-text-stroke: 2px #fafafa;
+ color: transparent;
+}
+
+
+.banner .main-content .hero {
+  background-image: url('images/hero.png');
+  width:100%;
+  height:60vh;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+  animation: shadowColor 3s infinite alternate;
+}
+
+@keyframes shadowColor {
+  0%   { filter: drop-shadow(0 10px 10px red); }
+  50%  { filter: drop-shadow(0 10px 10px blue); }
+  100% { filter: drop-shadow(0 10px 10px purple); }
+}
+
+.banner .main-content .author{
+  position: relative;
+  font-family: "Montserrat";
+  z-index: 2;
+  
+}
+.banner .main-content .author h2{
+  text-align: right;
+  margin-bottom: 15px;
+  margin-top: 0;
+  color:#fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}

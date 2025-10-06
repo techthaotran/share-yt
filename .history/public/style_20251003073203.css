@@ -1,0 +1,31 @@
+body {
+  background-color: #111;
+  margin: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner .slider {
+  position: absolute;
+  width: 180px;
+  top: 20%;
+  left: calc(50%-180px);
+
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  
+}
+
+.banner .slider .item img {
+  width: 100%;
+  object-fit: cover;
+  
+}
