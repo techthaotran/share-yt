@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card 2D và Card 3D</title>
+</head>
+<body>
+    <h1>Transform 2D vs 3D Cards</h1>
+    
+    <!-- SECTION 2D -->
+    <div class="section-title">
+        🎨 CARD 2D - Transform không có Perspective
+    </div>
+    
+    <div class="container">
+        <!-- Card 2D-1: Scale & Rotate -->
+        <div class="card-2d-1">
+            <div class="card-2d-1-inner">
+                <div class="icon">📐</div>
+                <h2>Scale & Rotate</h2>
+                <p>Phóng to và xoay 2D</p>
+                <div class="badge">scale(1.1) rotate(5deg)</div>
+            </div>
+        </div>
+
+        <!-- Card 2D-2: Translate -->
+        <div class="card-2d-2">
+            <div class="card-2d-2-inner">
+                <div class="icon">⬆️</div>
+                <h2>Translate</h2>
+                <p>Di chuyển theo trục Y</p>
+                <div class="badge">translateY(-20px)</div>
+            </div>
+        </div>
+
+        <!-- Card 2D-3: Skew -->
+        <div class="card-2d-3">
+            <div class="card-2d-3-inner">
+                <div class="icon">📏</div>
+                <h2>Skew</h2>
+                <p>Nghiêng phần tử 2D</p>
+                <div class="badge">skew(-5deg, -5deg)</div>
+            </div>
+        </div>
+
+        <!-- Card 2D-4: Multiple -->
+        <div class="card-2d-4">
+            <div class="card-2d-4-inner">
+                <div class="icon">🎯</div>
+                <h2>Kết Hợp 2D</h2>
+                <p>Scale + Rotate + Translate</p>
+                <div class="badge">Multiple transforms</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3D -->
+    <div class="section-title">
+        🎲 CARD 3D - Transform với Perspective
+    </div>
+    
+    <div class="container">
+        <!-- Card 3D-1: Flip Y -->
+        <div class="card-3d-1">
+            <div class="card-3d-1-inner">
+                <div class="card-3d-1-front">
+                    <div class="icon">🎴</div>
+                    <h2>Flip 3D</h2>
+                    <p>Lật card theo trục Y</p>
+                    <div class="badge">rotateY(180deg)</div>
+                </div>
+                <div class="card-3d-1-back">
+                    <div class="icon">✨</div>
+                    <h2>Mặt Sau</h2>
+                    <p>Hiệu ứng lật 3D thật</p>
+                    <div class="badge">backface-visibility</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3D-2: Rotate X -->
+        <div class="card-3d-2">
+            <div class="card-3d-2-inner">
+                <div class="icon">🔄</div>
+                <h2>Rotate X</h2>
+                <p>Xoay theo trục X (ngang)</p>
+                <div class="badge">rotateX(180deg)</div>
+            </div>
+        </div>
+
+        <!-- Card 3D-3: Tilt 3D -->
+        <div class="card-3d-3">
+            <div class="card-3d-3-inner">
+                <div class="icon">🎯</div>
+                <h2>Tilt 3D</h2>
+                <p>Nghiêng 3D với perspective</p>
+                <div class="badge">rotateX + rotateY</div>
+            </div>
+        </div>
+
+        <!-- Card 3D-4: TranslateZ -->
+        <div class="card-3d-4">
+            <div class="card-3d-4-inner">
+                <div class="icon">📦</div>
+                <h2>TranslateZ</h2>
+                <p>Di chuyển theo trục Z (chiều sâu)</p>
+                <div class="badge">translateZ(80px)</div>
+            </div>
+        </div>
+
+        <!-- Card 3D-5: Cube -->
+        <div class="card-3d-5">
+            <div class="card-3d-5-cube">
+                <div class="card-3d-5-face card-3d-5-front">
+                    <div class="icon">🎲</div>
+                    <h2>Cube 3D</h2>
+                    <p>Khối lập phương thật</p>
+                    <div class="badge">Mặt trước</div>
+                </div>
+                <div class="card-3d-5-face card-3d-5-right">
+                    <div class="icon">🌟</div>
+                    <h2>Mặt Bên</h2>
+                    <p>Transform 3D phức tạp</p>
+                    <div class="badge">Mặt phải</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
